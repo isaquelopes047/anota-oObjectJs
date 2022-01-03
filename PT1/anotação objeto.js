@@ -218,21 +218,25 @@ oferecerSeguro(cliente);
 // Gerar uma função que crie novos dados 
 
 //a função vai servir como uma função construtora
-function cliente(nome, cpf, email, saldo){
-    
-    this.nome = nome
-    this.cpf = cpf
-    this.email = email
-    this.saldo = saldo
-    this.depositar = function(valor){
-        this.saldo += valor;
+class cliente {
+    constructor(nome, cpf, email, saldo) {
+
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+        this.saldo = saldo;
+        this.depositar = function (valor) {
+            this.saldo += valor;
+        };
     }
 }
 
-function clientePoupanca(nome, cpf, email, saldo, saldoPoup){
+class clientePoupanca {
+    constructor(nome, cpf, email, saldo, saldoPoup) {
 
-    cliente.call(this, nome,cpf,email,saldo) //CALL serve para erdar os dados de outro objeto, assim evitando de reescrever
-    this.saldoPoup = saldoPoup
+        cliente.call(this, nome, cpf, email, saldo); //CALL serve para erdar os dados de outro objeto, assim evitando de reescrever
+        this.saldoPoup = saldoPoup;
+    }
 }
 
 //Aqui criaremos um novo objeto com os dados do objeto cliente dando valor as chaves
